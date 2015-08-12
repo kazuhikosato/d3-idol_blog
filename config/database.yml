@@ -13,10 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: fce8gyx7
   host: localhost
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
+  password: <%= ENV['secret'] %>
 
 development:
   <<: *default
@@ -51,5 +50,5 @@ test:
 production:
   <<: *default
   database: d3_idol_jp_production
-  username: d3_idol_jp
-  password: <%= ENV['D3-IDOL_JP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['secret'] %>

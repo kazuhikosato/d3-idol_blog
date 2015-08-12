@@ -49,6 +49,7 @@ gem 'rumoji'
 gem 'jpmobile'
 gem 'pry-rails'
 gem 'pry-byebug'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'hirb'
@@ -59,7 +60,7 @@ group :development, :test do
   gem 'rails-erd'
 end
 gem 'impressionist'
-
+gem 'dotenv-rails'
 gem 'rb-readline', '~> 0.5.2'
 gem 'passenger', '~> 5.0.7'
 gem 'google-analytics-rails'

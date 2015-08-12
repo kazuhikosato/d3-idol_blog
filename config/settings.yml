@@ -1,0 +1,11 @@
+defaults: &defaults
+  secret: fce8gyx7
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
