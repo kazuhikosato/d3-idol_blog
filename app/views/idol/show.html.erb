@@ -1,0 +1,22 @@
+<div class="col-md-3">
+  <div class="menu-item_idol">
+    <%= image_tag @idol.image_url %>
+    <div class="name"><%= link_to  @idol.name, @idol.url %></div>
+  </div>
+</div>
+<div class="col-md-7">
+  <!-- Start Carousel Section -->
+  <div class="home-slider">
+    <!-- Indicators -->
+    <div class="main_column_wrap">
+      <div class="main_column">
+      <% @blogs.each do |blog| %>
+        <div class="record">
+          <div class="col-md-8"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 60, omission: ".."), blog.url, target: '_blank' %></div>
+          <div class="col-md-4"><%= format_datetime blog.datetime %></div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div id="show_idol">
+  <% @idols.each do |idol| %>
+    <div class="col-xs-6 col-md-2">
+      <div class="image"><%= image_tag idol.image_url, size: '151x182' %></div>
+      <div class="name"><%= link_to "#{idol.name}(#{idol.blogs.count})", idol_path(idol) %></div>
+    </div>
+  <% end %>
+</div>

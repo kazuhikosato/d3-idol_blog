@@ -45,10 +45,12 @@ end
 
 gem 'nokogiri', '~> 1.6.6.2'
 gem 'kaminari'
+gem 'rumoji'
+gem 'jpmobile'
+gem 'pry-rails'
+gem 'pry-byebug'
 
 group :development, :test do
-  gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'better_errors'
@@ -56,3 +58,9 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-erd'
 end
+gem 'impressionist'
+
+gem 'rb-readline', '~> 0.5.2'
+gem 'passenger', '~> 5.0.7'
+gem 'google-analytics-rails'
+gem 'whenever', :require => false

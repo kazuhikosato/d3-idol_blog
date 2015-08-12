@@ -1,0 +1,36 @@
+<div class="col-md-2">
+  <div class="menu-item blue">
+    <a href="#feature-modal" data-toggle="modal">
+      <i class="fa fa-magic"></i>
+      <p>Feature</p>
+    </a>
+  </div>
+  <div class="menu-item light-red">
+    <a href="#contact-modal" data-toggle="modal">
+      <i class="fa fa-envelope-o"></i>
+      <p>お問い合わせ</p>
+    </a>
+  </div>
+</div>
+<div class="col-md-8">
+  <!-- Start Carousel Section -->
+  <div class="home-slider">
+    <!-- Indicators -->
+    <div class="main_column_wrap">
+      <div class="main_column">
+      <% @blogs.each do |blog| %>
+        <div class="record">
+          <div class="col-md-2">
+            <% uniq_data(blog).each do |name| %>
+              <span class="<%= get_button_class(name) %>"><%= name %></span>
+            <% end %>
+          </div>
+          <div class="col-md-2"><%= link_to blog.idol.name, idol_path(blog.idol.id) %></div>
+          <div class="col-md-5"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 20, omission: ".."), blog.url, target: '_blank' %></div>
+          <div class="col-md-3"><%= format_datetime blog.datetime %></div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

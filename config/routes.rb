@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  root 'top#index'
+  resources :top do
+    collection do
+      get :akb
+      get :ske
+      get :nmb
+      get :hkt
+      get :og
+      get :nogizaka
+    end
+  end
+
+  resources :idol do
+    collection do
+      get :akb
+      get :ske
+      get :nmb
+      get :hkt
+      get :og
+      get :nogizaka
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

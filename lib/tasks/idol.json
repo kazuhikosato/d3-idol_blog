@@ -1,0 +1,15 @@
+{
+  "akb":[
+    {
+      "host_url":            'https://48pedia.org',
+      "base_url":            'https://48pedia.org/AKB48%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E4%B8%80%E8%A6%A7',
+      "parent_reg_pattern":  '//*[@id="container"]/div/div/div/div[2]',
+      "url_reg_pattern":     'a/@href',
+      "child_reg_pattern":   '//*[@id="container"]/div',
+      "title_reg_pattern":   'div[1]/h2/text()',
+      "text_reg_pattern":    'div[4]',
+      "url_option":          nil,
+      "pager_after_path":    nil
+    }
+  ]
+}
