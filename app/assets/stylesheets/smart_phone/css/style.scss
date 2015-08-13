@@ -252,14 +252,13 @@ p {
   display: block;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-  :link, :visited, :hover, :active {
-    color: #fff;
-    text-decoration:none;
-    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
+  :link, :visited, :hover, :active {
+    color: #fff;
+    text-decoration:none;
   }
 }
 
@@ -267,14 +266,14 @@ p {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
   font-size: 20px;
-  :link, :visited, :hover, :active {
-    color: #fff;
-    text-decoration:none;
-    user-select: none;
+  user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
+  :link, :visited, :hover, :active {
+    color: #fff;
+    text-decoration:none;
   }
 }
 
