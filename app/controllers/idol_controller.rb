@@ -1,10 +1,10 @@
 class IdolController < ApplicationController
   def index
-    @idols = Idol.all.order(:kana)
-    #@idols = Idol.all
-    #@idols = @idols.sort_by{ |idol|
-    #  -idol.blogs.count
-    #}
+    @idols = Idol.all
+    @idols = @idols.sort_by{ |idol|
+      -idol.blogs.count
+    }
+    @idols = @idols[0...60]
   end
 
   def show
