@@ -9,11 +9,10 @@
   <meta name="author" content="">
   <!-- Custom Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <title>Elevator - Multipurpose Bootstrap Theme</title>
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -29,6 +28,7 @@
         <div class="row">
         <%= yield %>
         <%= render 'layouts/main_sidebar' %>
+        <%= render 'layouts/adsence' %>
         <%= render 'layouts/footer_menu' %>
         </div>
       </div>

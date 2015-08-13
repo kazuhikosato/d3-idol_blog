@@ -1,24 +1,27 @@
 Rails.application.routes.draw do
   root 'top#index'
-  resources :top do
-    collection do
-      get :akb
-      get :ske
-      get :nmb
-      get :hkt
-      get :og
-      get :nogizaka
-    end
-  end
+  resources :top
+  get :akb, to: 'top#akb'
+  get :ske, to: 'top#ske'
+  get :nmb, to: 'top#nmb'
+  get :hkt, to: 'top#hkt'
+  get :og,  to: 'top#og'
+  get :nogizaka, to: 'top#nogizaka'
 
   resources :idol do
     collection do
       get :akb
+      get ':akb/:id', to: 'idol#show'
       get :ske
+      get ':ske/:id', to: 'idol#show'
       get :nmb
+      get ':nmb/:id', to: 'idol#show'
       get :hkt
+      get ':hkt/:id', to: 'idol#show'
       get :og
+      get ':og/:id', to: 'idol#show'
       get :nogizaka
+      get ':nogizaka/:id', to: 'idol#show'
     end
   end
 

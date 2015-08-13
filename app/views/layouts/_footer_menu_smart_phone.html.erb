@@ -1,0 +1,67 @@
+<div class="col-xs-12 col-sm-12">
+  <div class="col-xs-12">
+    <div class="menu-item blue">
+      <%= link_to idol_index_path do %>
+        <i class="fa fa-users"></i>
+        <p>All Member</p>
+      <% end %>
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item red ">
+      <%= link_to controller: :idol, action: :akb do %>
+        <i class="fa fa-heart-o"></i>
+        <p>AKB48</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item yellow">
+      <%= link_to controller: :idol, action: :ske do %>
+        <i class="fa fa-heart-o"></i>
+        <p>SKE48</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item green">
+      <%= link_to controller: :idol, action: :nmb do %>
+        <i class="fa fa-heart-o"></i>
+        <p>NMB48</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item black">
+      <%= link_to controller: :idol, action: :hkt do %>
+        <i class="fa fa-heart-o"></i>
+        <p>HKT48</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item white">
+      <%= link_to controller: :idol, action: :og do %>
+        <i class="fa fa-heart-o"></i>
+        <p>OG</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="menu-item purple">
+      <%= link_to controller: :idol, action: :nogizaka do %>
+        <i class="fa fa-heart-o"></i>
+        <p>乃木坂46</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="menu-item light-orange">
+      <%= mail_to "info@d3-idol.jp" do %>
+        <i class="fa fa-paper-plane-o"></i>
+        <p>Contact</p>
+      <% end %>
+    </div>
+  </div>
+</div>

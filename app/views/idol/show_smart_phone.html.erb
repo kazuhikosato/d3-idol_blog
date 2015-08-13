@@ -12,8 +12,8 @@
       <div class="main_column">
       <% @blogs.each do |blog| %>
         <div class="record">
-          <div class="col-md-8"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 60, omission: ".."), blog.url, target: '_blank' %></div>
-          <div class="col-md-4"><%= format_datetime_add_year blog.datetime %></div>
+          <div class="col-xs-12 record_date"><%= format_datetime_add_year blog.datetime %></div>
+          <div class="col-xs-12"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 30, omission: ".."), blog.url, target: '_blank', class: "text_btn" %></div>
         </div>
       <% end %>
       </div>

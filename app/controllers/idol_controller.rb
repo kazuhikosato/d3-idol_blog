@@ -14,7 +14,6 @@ class IdolController < ApplicationController
 
   def akb
     @idols = view_context.get_team_idol 1
-    @team = "akb"
     render 'index'
   end
 
