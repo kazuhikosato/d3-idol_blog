@@ -248,16 +248,24 @@ p {
 }
 
 .menu-item a {
+  color: #fff;
+  display: block;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  :link, :visited, :hover, :active {
     color: #fff;
-    display: block;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
+    text-decoration:none
+  }
 }
 
 .menu-item a p {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
     font-size: 20px;
+  }
+  :link, :visited, :hover, :active {
+    color: #fff;
+    text-decoration:none
 }
 
 .menu-item a i {
