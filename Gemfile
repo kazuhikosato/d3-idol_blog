@@ -50,6 +50,10 @@ gem 'jpmobile'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'therubyracer'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'hirb'

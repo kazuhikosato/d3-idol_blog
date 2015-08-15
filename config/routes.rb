@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"},
+      controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'top#index'
   resources :top
+  resources :idol_users, only: [:create, :destroy]
+  get :all, to: 'top#all'
   get :akb, to: 'top#akb'
   get :ske, to: 'top#ske'
   get :nmb, to: 'top#nmb'

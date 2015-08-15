@@ -1,0 +1,61 @@
+<section id="logo-section" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 header_item">
+        <% if user_signed_in? %>
+          <div class="col-xs-12 header_item">
+            <div class="menu-item blue user_name">
+              <a>
+                <i class="fa fa-home"> <b><%= current_user.username %></b></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-6 header_item">
+            <div class="menu-item green">
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-pencil-square-o"></i>
+                <p>設定変更</p>
+              <% end %>
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-6 header_item">
+            <div class="menu-item red">
+              <%= link_to destroy_user_session_path, method: "delete" do %>
+                <i class="fa fa-sign-out"></i>
+                <p>ログアウト</p>
+              <% end %>
+              </a>
+            </div>
+          </div>
+        <% else %>
+          <div class="col-xs-6 header_item">
+            <div class="menu-item green">
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-sign-in"></i>
+                <p>ログイン</p>
+              <% end %>
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-6 header_item">
+            <div class="menu-item red">
+              <%= link_to new_user_registration_path do %>
+                <i class="fa fa-user-plus"></i>
+                <p>会員登録</p>
+              <% end %>
+              </a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12">
+        <div class="logo text-center">
+          <%= link_to root_path do %>
+            <h1 id="logo"><%= image_tag "logo.png", alt: "AKBグループブログまとめ", size: '361x103' %></h1>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

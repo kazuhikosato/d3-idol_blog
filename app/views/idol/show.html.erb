@@ -2,11 +2,16 @@
   <div class="menu-item_idol">
     <%= link_to(image_tag(@idol.image_url), @idol.url, target: "_blank") %>
     <div class="name"><%= link_to @idol.name, @idol.url, target: "_blank" %></div>
+    <div id="favorite">
+      <div class="menu-item blue">
+        <%= render 'idol_users/favorite_button', idol: @idol, favorite: @idol.favorite_for(current_user) %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="col-md-7">
   <!-- Start Carousel Section -->
-  <div class="home-slider">
+  <div class="home-slider idol_show">
     <!-- Indicators -->
     <div class="main_column_wrap">
       <div class="main_column">

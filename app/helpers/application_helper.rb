@@ -74,4 +74,12 @@ module ApplicationHelper
     end
     get_path affiliations.shift
   end
+
+  def get_favorite_idol user
+    idols =[]
+    IdolUser.where(user_id: user.id).each do |idol_user|
+      idols << idol_user.idol
+    end
+    idols
+  end
 end

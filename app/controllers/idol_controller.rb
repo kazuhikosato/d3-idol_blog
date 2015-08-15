@@ -1,7 +1,6 @@
 class IdolController < ApplicationController
   def index
-    @idols = Idol.all
-    @idols = @idols.sort_by{ |idol|
+    @idols = Idol.all.sort_by{ |idol|
       -idol.blogs.count
     }
     @idols = @idols[0...60]

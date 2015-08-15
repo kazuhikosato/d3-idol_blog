@@ -12,10 +12,10 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  password: fce8gyx7
   pool: 5
   host: localhost
-  socket: /var/lib/mysql/mysql.sock
-  password: <%= ENV['secret'] %>
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default

@@ -3,7 +3,33 @@
   <div class="home-slider">
     <!-- Indicators -->
     <div class="col-xs-12 main_column_wrap">
-      <div class="main_column_header">
+      <% if user_signed_in? %>
+        <div class="main_column_header">
+          <span class="col-xs-12"><%= link_to "Favorite", root_path,     class: "btn btn-favorite btn-xs btn_blog_header_root" %></span>
+          <span class="col-xs-4"><%= link_to "AKB48",    "/akb",         class: "btn btn-red btn_blog_header" %></span>
+          <span class="col-xs-4"><%= link_to "SKE48",    "/ske",         class: "btn btn-yellow btn_blog_header" %></span>
+          <span class="col-xs-4"><%= link_to "NMB48",    "/nmb",         class: "btn btn-green btn_blog_header" %></span>
+          <span class="col-xs-4"><%= link_to "HKT48",    "/hkt",         class: "btn btn-black btn_blog_header" %></span>
+          <span class="col-xs-4"><%= link_to "OG",       "/og",          class: "btn btn-default btn_blog_header" %></span>
+          <span class="col-xs-4"><%= link_to "乃木坂46", "/nogizaka",    class: "btn btn-purple btn_blog_header" %></span>
+          <span class="col-xs-12"><%= link_to "All",      "/all",        class: "btn btn-primary btn-xs btn_blog_header_root" %></span>
+        </div>
+        <div class="main_column">
+          <% @blogs_login.each do |blog| %>
+            <div class="record">
+              <div class="col-xs-5 record_date">
+                <% uniq_data(blog).each do |name| %>
+                  <span><%= link_to name, get_path(name), class: "#{switch_class(name)} team_btn" %></span>
+                <% end %>
+              </div>
+              <div class="col-xs-4 record_date"><%= link_to blog.idol.name, idol_path(blog.idol.id), class: "text_btn" %></div>
+              <div class="col-xs-3 record_date"><%= format_datetime_smart_phone blog.datetime %></div>
+              <div class="col-xs-12"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 20, omission: ".."), blog.url, target: '_blank', class: "text_btn" %></div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="main_column_header">
         <span class="col-xs-4"><%= link_to "AKB48",    "/akb",         class: "btn btn-red btn_blog_header" %></span>
         <span class="col-xs-4"><%= link_to "SKE48",    "/ske",         class: "btn btn-yellow btn_blog_header" %></span>
         <span class="col-xs-4"><%= link_to "NMB48",    "/nmb",         class: "btn btn-green btn_blog_header" %></span>
@@ -11,21 +37,22 @@
         <span class="col-xs-4"><%= link_to "OG",       "/og",          class: "btn btn-default btn_blog_header" %></span>
         <span class="col-xs-4"><%= link_to "乃木坂46", "/nogizaka",    class: "btn btn-purple btn_blog_header" %></span>
         <span class="col-xs-12"><%= link_to "All",      root_path,     class: "btn btn-primary btn_blog_header_root" %></span>
-      </div>
-      <div class="main_column">
-      <% @blogs.each do |blog| %>
-        <div class="record">
-          <div class="col-xs-5 record_date">
-            <% uniq_data(blog).each do |name| %>
-              <span><%= link_to name, get_path(name), class: "#{switch_class(name)} team_btn" %></span>
-            <% end %>
+        </div>
+        <div class="main_column">
+        <% @blogs.each do |blog| %>
+          <div class="record">
+            <div class="col-xs-5 record_date">
+              <% uniq_data(blog).each do |name| %>
+                <span><%= link_to name, get_path(name), class: "#{switch_class(name)} team_btn" %></span>
+              <% end %>
+            </div>
+            <div class="col-xs-4 record_date"><%= link_to blog.idol.name, idol_path(blog.idol.id), class: "text_btn" %></div>
+            <div class="col-xs-3 record_date"><%= format_datetime_smart_phone blog.datetime %></div>
+            <div class="col-xs-12"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 20, omission: ".."), blog.url, target: '_blank', class: "text_btn" %></div>
           </div>
-          <div class="col-xs-4 record_date"><%= link_to blog.idol.name, idol_path(blog.idol.id), class: "text_btn" %></div>
-          <div class="col-xs-3 record_date"><%= format_datetime_smart_phone blog.datetime %></div>
-          <div class="col-xs-12"><%= link_to truncate(CGI.unescapeHTML(Rumoji.decode(blog.title)), length: 20, omission: ".."), blog.url, target: '_blank', class: "text_btn" %></div>
+        <% end %>
         </div>
       <% end %>
-      </div>
     </div>
   </div>
 </div>

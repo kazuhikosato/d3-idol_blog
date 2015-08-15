@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <% if idol.favorite_for current_user %>
+    <%= link_to idol_user_path(favorite), method: :delete do %>
+      <i class="fa fa-star">お気に入り解除</i>
+    <% end %>
+  <% else %>
+    <%= link_to idol_users_path(idol_id: idol), method: :post do %>
+      <i class="fa fa-star-o">お気に入り登録</i>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= link_to new_user_registration_path do %>
+    <i class="fa fa-star-o">お気に入り登録</i>
+  <% end %>
+<% end %>
