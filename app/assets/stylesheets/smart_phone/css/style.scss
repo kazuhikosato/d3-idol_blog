@@ -483,6 +483,14 @@ and (max-width : 1199px) {
     }
   }
 }
+
+div.member_login {
+  height: 430px;
+}
+
+div.member {
+  height: 660px;
+}
 div.idol_show_blog {
   height:410px;
 }
@@ -494,6 +502,10 @@ div.idol_show_blog {
 
 .home-slider .carousel-indicators .active {
 	background-color: #FF432E;
+}
+
+.withdrawal {
+  margin-top: 50px;
 }
 
 
