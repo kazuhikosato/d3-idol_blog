@@ -432,7 +432,7 @@ and (max-width : 1199px) {
 .home-slider {
   width: 100%;
   margin-bottom: 15px;
-  height: 550px;
+  height: 600px;
   opacity: 0.8;
   background-color: #f5f5f5;
   div.main_column_wrap {
@@ -481,6 +481,9 @@ and (max-width : 1199px) {
         }
       }
     }
+    div.no_loggin {
+      height: 440px;
+    }
   }
 }
 
@@ -488,6 +491,9 @@ div.member_login {
   height: 430px;
 }
 
+div.member_edit {
+  height: 600px;
+}
 div.member {
   height: 660px;
 }
