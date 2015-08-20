@@ -1,4 +1,3 @@
-require 'nokogiri'
 require 'rumoji'
 require 'open-uri'
 require 'kconv'
